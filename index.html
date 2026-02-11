@@ -9,20 +9,18 @@
     </head>
 
     <body>
-        <img src="assets/images/logo.png" class="logo" alt="Pulse Logo: 'PulseChat Stay Connected'"/>
+        <img src="assets/images/logo.png" class="logo" alt="PulseChat logo"/>
         <main class="login-container">
-            
-            <form class="login-form">
+            <form class="login-form" id="login-form" method="POST">
                 <header class="form-header">Login</header>
                 <label for="username">Username:</label>
                 <input type="text" class="input-field" id="username" name="username" required>
-                <label type="text" for="password">Password:</label>
-                <input id="password" class="input-field" name="password" required>
+                <label for="password">Password:</label>
+                <input id="password" class="input-field" name="password"type="password" required>
                 <input type="submit" class="button" value="Login">
                 <a href="pages/sign-up.html" class="auth-page-link">Create Account</a>
             </form>
-            
         </main>
-        
     </body>
+    <script src="js/landing-page.js"></script>
 </html>

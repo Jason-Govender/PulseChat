@@ -9,20 +9,17 @@
         <link rel="stylesheet" href="../styles/sign-up.css">
     </head>
     <body>
-        <main>
-            <main class="login-container">
-            
-            <form class="login-form" id="registration-form">
+        <main class="login-container">
+            <form class="login-form" id="registration-form" method="POST">
                 <header class="form-header">Create An Account</header>
                 <label for="username">Username:</label>
                 <input type="text" class="input-field" id="username" name="username" required>
-                <label type="text" for="password">Password:</label>
-                <input id="password" class="input-field" name="password" required>
+                <label for="password">Password:</label>
+                <input id="password" class="input-field" name="password" type="password" required>
                 <input type="submit" class="button" value="Register">
                 <a href="../index.html" class="auth-page-link">Have An Account? Login</a>
             </form>
-            
-        </main>
         </main>
     </body>
+    <script src="../js/sign-up.js"></script>
 </html>
