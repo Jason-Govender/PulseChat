@@ -3,26 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PulseChat | Login</title>
+        <title>PulseChat | Register</title>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles/landing-page.css">
+        <link rel="stylesheet" href="../styles/landing-page.css">
+        <link rel="stylesheet" href="../styles/sign-up.css">
     </head>
-
     <body>
-        <img src="assets/images/logo.png" class="logo" alt="Pulse Logo: 'PulseChat Stay Connected'"/>
-        <main class="login-container">
+        <main>
+            <main class="login-container">
             
-            <form class="login-form">
-                <header class="form-header">Login</header>
+            <form class="login-form" id="registration-form">
+                <header class="form-header">Create An Account</header>
                 <label for="username">Username:</label>
                 <input type="text" class="input-field" id="username" name="username" required>
                 <label type="text" for="password">Password:</label>
                 <input id="password" class="input-field" name="password" required>
-                <input type="submit" class="button" value="Login">
-                <a href="pages/sign-up.html" class="auth-page-link">Create Account</a>
+                <input type="submit" class="button" value="Register">
+                <a href="../index.html" class="auth-page-link">Have An Account? Login</a>
             </form>
             
         </main>
-        
+        </main>
     </body>
 </html>
