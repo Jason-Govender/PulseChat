@@ -16,15 +16,13 @@ function handleRegister(event){
 
     const newUser = {
         username: username,
-        password: password,
-        isOnline: false,
-        isTyping: false
+        password: password
     };
 
     const updatedUsers = [...users, newUser];
     localStorage.setItem("users", JSON.stringify(updatedUsers));
 
-    location.replace("../index.html");
+    location.replace("home.html");
 }
 
 

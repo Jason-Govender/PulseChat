@@ -12,8 +12,7 @@ function handleLogin(event) {
     if(validUser) {
         sessionStorage.setItem(
             "currentUser", JSON.stringify({
-                username: validUser.username,
-                isOnline: true,
+                username: validUser.username
             })
         );
 
