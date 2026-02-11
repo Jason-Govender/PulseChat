@@ -16,6 +16,11 @@ function handleLogin(event) {
             })
         );
 
+        const onlineUsers = JSON.parse(localStorage.getItem("onlineUsers")) || [];
+        const updatedOnlineUsers = onlineUsers.includes(validUser.username) ? onlineUsers : [...onlineUsers, validUser.username];
+
+        localStorage.setItem("onlineUsers", JSON.stringify(updatedOnlineUsers));
+
         location.replace("pages/home.html");
     } else {
         alert("Username and/or Password is Invalid");
