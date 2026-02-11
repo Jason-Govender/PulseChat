@@ -23,17 +23,6 @@
     height: 15rem;
 }
 
-.status-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #777;
-}
-
-.status-dot.online {
-  background: #25d366;
-}
-
 #profile-status-dot {
     display: inline-block;
     width: 0.7rem;
