@@ -1,0 +1,103 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(180deg,#7b1b3d 0%, #c91c7c 50%,#d8579b 100%);
+  font-family: "Poppins", sans-serif;
+}
+
+.create-group-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+  border-radius: 24px;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.create-group-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 30px;
+}
+
+
+
+.create-group-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: white;
+}
+
+#create-group-form input[type="text"] {
+  width: 100%;
+  height: 56px;
+  border-radius: 14px;
+  border: none;
+  padding: 0 18px;
+  font-size: 16px;
+}
+
+.members-list {
+  max-height: 180px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 8px;
+}
+
+.members-list::-webkit-scrollbar {
+  display: none;
+}
+
+.members-list {
+  scrollbar-width: none;
+}
+
+.member-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-weight: 500;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.primary-btn {
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: #ff0099;
+  color: white;
+}
+
+.secondary-btn {
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  background: rgba(255,255,255,0.3);
+  color: white;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+
+  .create-group-card{
+    width: 75%;
+  }
+}
