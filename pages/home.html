@@ -4,5 +4,53 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PulseChat | Home</title>
+        <link rel="stylesheet" href="../styles/home.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
+    <body>
+        <nav class="side-bar">
+            <header class="current-user-container">
+                <img class="medium-avatar" src="../assets/images/placeholder.png" alt="Profile"/>
+                <div class="user-status-container">
+                    <span class="username">Username</span>
+                    <div id="online-status">
+                        <span id="profile-status-dot"></span>
+                        <span class="status-text">Online</span>
+                    </div>
+                    
+                    <span><a id="logout" href="../index.html">Logout</a></span>
+                </div>
+            </header>
+            <div class="chats-container">
+                <header class="section-header" id="contacts-header">
+                    <span class="contacts">Contacts</span>
+                    <span class="arrow" id="contacts-arrow">▼</span>
+                </header>
+                <div class="contacts-list" id="contacts-list"></div>
+                <header class="section-header" id="groups-header">
+                <span class="groups">Groups</span>
+                <span class="arrow" id="groups-arrow">▼</span>
+                </header>
+
+                <div class="groups-list" id="groups-list"></div>
+            </div>
+            <div class="sidebar-footer">
+                <a href="create-group.html" id="create-group-btn">+ Create Group</a>
+            </div>
+        </nav>
+        <main class="chat-panel">
+
+            <header class="chat-header"></header>
+
+            <div class="chat-messages">
+                
+            </div>
+            <div class="welcome-container">
+                <img src="../assets/images/pulse.png" class="welcome-image" alt="Pulse Logo"/>
+                <h1 class="welcome-message">Let's Get Chatting!</h1>
+            </div>
+        </main>
+        
+        <script src="../js/home.js" defer></script>
+    </body>
 </html>

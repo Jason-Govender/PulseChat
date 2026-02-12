@@ -1,3 +1,7 @@
+if (sessionStorage.getItem("currentUser")) {
+  location.replace("home.html");
+}
+
 document.getElementById("login-form").addEventListener("submit", handleLogin);
 
 //Takes in user input, checks against the localStorage user array, validates and redirects to home on success
