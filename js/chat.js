@@ -9,7 +9,6 @@ const renderWelcomeHeader = () => {
 
   chatHeader.innerHTML = `
     <button class="mobile-menu-btn" type="button" aria-label="Open menu">☰</button>
-    <div class="chat-header-avatar"></div>
     <div class="chat-header-title">PulseChat</div>`;
 
   hamburgerMenuState();
@@ -120,7 +119,7 @@ const renderThread = (threadId, title) => {
   if (chatHeader) {
     chatHeader.innerHTML = `
     <button class="mobile-menu-btn" type="button" aria-label="Open menu">☰</button>
-    <div class="chat-header-avatar"></div>
+    <img src="../assets/images/placeholder.png" class="chat-avatar" alt="Avatar">
     <div class="chat-header-title">${title || ""}</div>`;
   }
 
