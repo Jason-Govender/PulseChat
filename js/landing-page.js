@@ -1,11 +1,12 @@
+//Prevents user from accessing login page without logging out first.
 if (sessionStorage.getItem("currentUser")) {
   location.replace("home.html");
 }
 
-document.getElementById("login-form").addEventListener("submit", handleLogin);
+
 
 //Takes in user input, checks against the localStorage user array, validates and redirects to home on success
-function handleLogin(event) {
+const handleLogin = (event) => {
     event.preventDefault();
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
@@ -31,4 +32,6 @@ function handleLogin(event) {
     }
 
 }
+
+document.getElementById("login-form").addEventListener("submit", handleLogin);
 

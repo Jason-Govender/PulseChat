@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PulseChat | Create Group</title>
+
+  <link rel="stylesheet" href="../styles/create-group.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <main class="create-group-page">
+
+    <div class="create-group-card">
+
+      <h1 class="create-group-title">Create Group</h1>
+
+      <form id="create-group-form" class="create-group-form">
+
+        <div class="form-group">
+          <label for="group-name">Group Name</label>
+          <input
+            type="text"
+            id="group-name"
+            placeholder="Enter group name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Select Members</label>
+          <div id="members" class="members-list">
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="primary-btn">
+            Create Group
+          </button>
+
+          <a href="home.html" class="secondary-btn">
+            Cancel
+          </a>
+        </div>
+
+      </form>
+
+    </div>
+
+  </main>
+
+  <script src="../js/create-group.js" defer></script>
+</body>
+</html>

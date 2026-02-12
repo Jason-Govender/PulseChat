@@ -1,7 +1,5 @@
-document.getElementById("registration-form").addEventListener("submit", handleRegister);
-
 //Takes in user input, checks the username in localstorage. If none exists, add user to localstorage and redirect to home.html
-function handleRegister(event){
+const handleRegister = (event) => {
     event.preventDefault();
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
@@ -35,5 +33,7 @@ function handleRegister(event){
 
     location.replace("home.html");
 }
+
+document.getElementById("registration-form").addEventListener("submit", handleRegister);
 
 

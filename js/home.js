@@ -40,36 +40,21 @@ logoutBtn.addEventListener("click", () => {
   location.replace("index.html");
 });
 
-window.addEventListener("beforeunload", () => {
-  const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
-  if (!currentUser) return;
-
-  const onlineUsers = JSON.parse(localStorage.getItem("onlineUsers")) || [];
-
-  const updatedOnline = onlineUsers.filter(
-    username => username !== currentUser.username
-  );
-
-  localStorage.setItem("onlineUsers", JSON.stringify(updatedOnline));
-});
-
-
-
 
 if (currentUser && displayUsername) {
   displayUsername.textContent = currentUser.username;
 }
 
-function getUser(user) {
+const getUser = (user) => {
   return user.username;
 }
 
-function getOnlineUsers() {
+const getOnlineUsers = () => {
   const arr = JSON.parse(localStorage.getItem("onlineUsers")) || [];
   return new Set(arr);
 }
 
-function loadContacts() {
+const loadContacts = () => {
   contactsList.innerHTML = "";
 
   const onlineSet = getOnlineUsers();
@@ -130,9 +115,27 @@ addEventListener("storage", (e) => {
   }
 });
 
-function openChatWith(user) {
+const openChatWith = (user) => {
+
   sessionStorage.setItem("activeChatUser", JSON.stringify(user));
-  sessionStorage.setItem("activeChatUserKey", user.username); 
+  sessionStorage.setItem("activeChatUserKey", user.username);
+
+  const threadId = makeDMThreadId(currentUser.username, user.username);
+
+  ensureThread(threadId, {
+    type: "dm",
+    members: [currentUser.username, user.username]
+  });
+
+  setActiveThread({
+    type: "dm",
+    id: threadId,
+    title: user.username
+  });
+
+  renderThread(threadId, user.username);
+  document.querySelector(".side-bar")?.classList.remove("is-open");
+  document.getElementById("mobile-overlay")?.classList.remove("is-open");
 }
 
 
@@ -146,7 +149,33 @@ groupsHeader.addEventListener("click", () => {
   groupsArrow.classList.toggle("rotate");
 });
 
-function loadGroups() {
+const openGroupChat = (group) => {
+
+  sessionStorage.setItem("activeGroupChat", JSON.stringify(group));
+  sessionStorage.setItem("activeGroupKey", group.name);
+
+
+  const threadId = makeGroupThreadId(group.name);
+
+  ensureThread(threadId, {
+    type: "group",
+    name: group.name,
+    members: group.members
+  });
+
+
+  setActiveThread({
+    type: "group",
+    id: threadId,
+    title: group.name
+  });
+
+  renderThread(threadId, group.name);
+  document.querySelector(".side-bar")?.classList.remove("is-open");
+  document.getElementById("mobile-overlay")?.classList.remove("is-open");
+}
+
+const loadGroups = () => {
   const groups = JSON.parse(localStorage.getItem("groups")) || [];
   const currentUser = JSON.parse(sessionStorage.getItem("currentUser")) || null;
 
@@ -164,7 +193,7 @@ function loadGroups() {
     avatar.classList.add("small-avatar");
 
     const img = document.createElement("img");
-    img.src = "./assets/images/placeholder.png";
+    img.src = "../assets/images/placeholder.png";
     avatar.appendChild(img);
 
     const name = document.createElement("div");
